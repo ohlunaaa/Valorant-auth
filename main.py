@@ -63,7 +63,7 @@ data = r.json()
 sitekey = data["captcha"]["hcaptcha"]["key"]
 rqdata = data["captcha"]["hcaptcha"]["data"]
 print("solving captcha with:", sitekey, rqdata)
-capmonster = capmonster_python.HCaptchaTask("3c142438fa2bcda97d0fed7f03dc8d60") # api key
+capmonster = capmonster_python.HCaptchaTask("") # api key
 capmonster.set_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36")
 task_id = capmonster.create_task(website_url="https://auth.riotgames.com", website_key=sitekey, custom_data=rqdata)
 result = capmonster.join_task_result(task_id)
